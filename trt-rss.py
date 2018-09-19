@@ -9,8 +9,9 @@ openTk.title("TRT Haber - Gündem")
 openTk.resizable(False, True)
 openTk.geometry("550x500")
 
+frame = None;
+
 def RSS():
-    global frame;
     frame = Frame(openTk)
     rss = feedparser.parse('http://www.trt.net.tr/rss/gundem.rss')
     index = 0
