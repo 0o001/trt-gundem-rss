@@ -20,14 +20,14 @@ def RSS():
         title = Label(frame, text = unidecode.unidecode(read['title']), fg = "black", font = ("Arial", 16))
         title.pack()
         
-        link = Button(frame, text = "Habere Git", cursor = "hand2", command = lambda clickIndex = index : GoLink(clickIndex))
+        link = Button(frame, text = "Habere Git", cursor = "hand2", command = lambda link = read['link'] : GoLink(link))
         link.pack()
         
         frame.pack()
         index += 1
 
-    def GoLink(clickIndex):
-        webbrowser.open_new(unidecode.unidecode(rss['entries'][clickIndex]['link']))
+    def GoLink(link):
+        webbrowser.open_new(unidecode.unidecode(link))
          
 
 def Refresh():
