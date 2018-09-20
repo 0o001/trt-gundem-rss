@@ -14,7 +14,6 @@ frame = None;
 def RSS():
     frame = Frame(openTk)
     rss = feedparser.parse('http://www.trt.net.tr/rss/gundem.rss')
-    index = 0
     
     for read in rss['entries']:
         title = Label(frame, text = unidecode.unidecode(read['title']), fg = "black", font = ("Arial", 16))
@@ -24,7 +23,6 @@ def RSS():
         link.pack()
         
         frame.pack()
-        index += 1
 
     def GoLink(link):
         webbrowser.open_new(unidecode.unidecode(link))
